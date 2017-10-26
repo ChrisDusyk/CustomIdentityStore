@@ -42,6 +42,10 @@ namespace CustomIdentityStore
 			// Add application services.
 			services.AddTransient<IEmailSender, EmailSender>();
 
+			// Custom store services
+			services.AddTransient<ICustomRoleService, CustomRoleService>();
+			services.AddTransient<ICustomUserService, CustomUserService>();
+
 			// The Distributed Memory Cache is required for the Session to be maintained
 			// It can also function and a general cache
 			services.AddDistributedMemoryCache();
