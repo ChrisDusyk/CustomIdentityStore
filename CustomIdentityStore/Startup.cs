@@ -39,10 +39,47 @@ namespace CustomIdentityStore
 				options.SlidingExpiration = true;
 			});
 
+			// Configure lockout for Identity
+			var lockoutOptions = new LockoutOptions()
+			{
+				AllowedForNewUsers = true,
+				DefaultLockoutTimeSpan = TimeSpan.FromDays(30),
+				MaxFailedAccessAttempts = 5
+			};
+
+			// Password requirements
+			var passwordOptions = new PasswordOptions()
+			{
+				RequireDigit = true,
+				RequiredUniqueChars = 3,
+				RequiredLength = 8,
+				RequireLowercase = true,
+				RequireNonAlphanumeric = true,
+				RequireUppercase = true
+			};
+
+			// User options to force unique emails
+			var userOptions = new UserOptions()
+			{
+				RequireUniqueEmail = true
+			};
+
+			// Apply the custom Identity configuration
+			services.Configure<IdentityOptions>(options =>
+			{
+				options.Lockout = lockoutOptions;
+				options.Password = passwordOptions;
+				options.User = userOptions;
+			});
+
 			// Add application services.
 			services.AddTransient<IEmailSender, EmailSender>();
 
-			// Custom store services
+			// Add the custom store to DI
+			services.AddTransient<IUserStore<ApplicationUser>, CustomUserStore>();
+			services.AddTransient<IRoleStore<ApplicationRole>, CustomRoleStore>();
+
+			// Custom store services, supporting the custom store
 			services.AddTransient<ICustomRoleService, CustomRoleService>();
 			services.AddTransient<ICustomUserService, CustomUserService>();
 			services.AddTransient<IUserRoleService, UserRoleService>();
