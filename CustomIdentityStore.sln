@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomIdentityStore", "CustomIdentityStore\CustomIdentityStore.csproj", "{5CE40FD3-8E0E-4DFF-88AE-C21A4279FAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CE40FD3-8E0E-4DFF-88AE-C21A4279FAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE40FD3-8E0E-4DFF-88AE-C21A4279FAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE40FD3-8E0E-4DFF-88AE-C21A4279FAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE40FD3-8E0E-4DFF-88AE-C21A4279FAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E8986CB-0025-419B-8580-0118ACB73DF3}
+	EndGlobalSection
+EndGlobal
