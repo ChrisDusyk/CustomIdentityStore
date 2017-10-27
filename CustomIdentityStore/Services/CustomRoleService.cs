@@ -16,10 +16,7 @@ namespace CustomIdentityStore.Services
 			// Call store to create role
 
 			// Return success
-			return Task.Run(() =>
-			{
-				return ServiceResult.Success;
-			});
+			return Task.FromResult(ServiceResult.Success);
 		}
 
 		public Task<ServiceResult> DeleteAsync(string roleId)
@@ -27,30 +24,21 @@ namespace CustomIdentityStore.Services
 			// Call store to delete role
 
 			// Return success
-			return Task.Run(() =>
-			{
-				return ServiceResult.Success;
-			});
+			return Task.FromResult(ServiceResult.Success);
 		}
 
 		public Task<ApplicationRole> FindAsync(string roleId)
 		{
 			// Get role from store by ID
 
-			return Task.Run(() =>
-			{
-				return new ApplicationRole();
-			});
+			return Task.FromResult(new ApplicationRole());
 		}
 
 		public Task<ApplicationRole> FindByNameAsync(string roleName)
 		{
 			// Get role from store by role name
 
-			return Task.Run(() =>
-			{
-				return new ApplicationRole();
-			});
+			return Task.FromResult(new ApplicationRole());
 		}
 
 		public Task<ServiceResult> UpdateAsync(ApplicationRole applicationRole)
@@ -58,10 +46,7 @@ namespace CustomIdentityStore.Services
 			// Call store to update role
 
 			// Return success
-			return Task.Run(() =>
-			{
-				return ServiceResult.Success;
-			});
+			return Task.FromResult(ServiceResult.Success);
 		}
 	}
 }

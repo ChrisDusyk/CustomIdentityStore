@@ -45,6 +45,8 @@ namespace CustomIdentityStore
 			// Custom store services
 			services.AddTransient<ICustomRoleService, CustomRoleService>();
 			services.AddTransient<ICustomUserService, CustomUserService>();
+			services.AddTransient<IUserRoleService, UserRoleService>();
+			services.AddTransient<IUserClaimService, UserClaimService>();
 
 			// The Distributed Memory Cache is required for the Session to be maintained
 			// It can also function and a general cache

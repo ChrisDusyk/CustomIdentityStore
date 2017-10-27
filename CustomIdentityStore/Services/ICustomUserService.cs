@@ -14,6 +14,8 @@ namespace CustomIdentityStore.Services
 
 		Task<ApplicationUser> FindByUsernameAsync(string username);
 
+		Task<ApplicationUser> FindByEmailAsync(string email);
+
 		Task<ServiceResult> UpdateAsync(ApplicationUser applicationUser);
 
 		Task<ServiceResult> DeleteAsync(string userId);

@@ -13,10 +13,7 @@ namespace CustomIdentityStore.Services
 			// Call store to create user
 
 			// Return success
-			return Task.Run(() =>
-			{
-				return ServiceResult.Success;
-			});
+			return Task.FromResult(ServiceResult.Success);
 		}
 
 		public Task<ServiceResult> DeleteAsync(string userId)
@@ -24,40 +21,35 @@ namespace CustomIdentityStore.Services
 			// Call store to delete user
 
 			// Return success
-			return Task.Run(() =>
-			{
-				return ServiceResult.Success;
-			});
+			return Task.FromResult(ServiceResult.Success);
 		}
 
 		public Task<ApplicationUser> FindAsync(string userId)
 		{
 			// Get user from store by ID
 
-			return Task.Run(() =>
-			{
-				return new ApplicationUser();
-			});
+			return Task.FromResult(new ApplicationUser());
+		}
+
+		public Task<ApplicationUser> FindByEmailAsync(string email)
+		{
+			// Get user from store by email
+
+			return Task.FromResult(new ApplicationUser());
 		}
 
 		public Task<ApplicationUser> FindByUsernameAsync(string username)
 		{
 			// Get user from store by username
 
-			return Task.Run(() =>
-			{
-				return new ApplicationUser();
-			});
+			return Task.FromResult(new ApplicationUser());
 		}
 
 		public Task<ServiceResult> UpdateAsync(ApplicationUser applicationUser)
 		{
 			// Call store to update user
 
-			return Task.Run(() =>
-			{
-				return ServiceResult.Success;
-			});
+			return Task.FromResult(ServiceResult.Success);
 		}
 	}
 }
