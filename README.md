@@ -27,7 +27,7 @@ LockoutEnabled | bool | Whether the account can be locked out. This doesn't mean
 LockoutEnd | DateTimeOffset | The time until the account unlocks
 NormalizedEmail | string, 256 character | This is the normalized email address. By default, Identity normalizes by making it all caps (ex. Email = john.smith@gmail.com, NormalizedEmail = JOHN.SMITH@GMAIL.COM)
 NormalizedUserName | string, 256 character | This is the normalized username. By default, Identity normalizes by making it all caps (ex. UserName = john.smith@gmail.com, NormalizedUserName = JOHN.SMITH@GMAIL.COM)
-PasswordHash | string | This is the hashed user password, more info [here](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing)
+PasswordHash | string | This is the hashed user password, more info **[here](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing)**
 PhoneNumber | string | Holds the user phone number, used for Two Factor setup
 PhoneNumberConfirmed | bool | Whether the phone number has been confirmed by the user
 SecurityStamp | string | A general stamp used to determine if the User session is valid. SignInManager compares the one in memory to the one in the session variable to determine if it's a valid session for the user. This can be anything, but is often a GUID
@@ -39,6 +39,10 @@ UserName | string, 256 character | The username for the record. This is often im
 The user account can be locked out by exceeding the max number of login attempts, configured in the Startup. The default for Identity is 5 failed attempts.
 
 The account is locked by adding the lockout timespan to the LockoutEnd field. The SignInManager checks for a lockout date and then compares it to the current DateTime to determine if the account is currently locked out. This also causes the AccessFailedCount to reset to 0.
+
+#### Security Stamp
+
+The SecurityStamp should change regularly to validate the User in the session. Identity will manage this automatically, and the stamp's timespan is configured by the Application Cookie's expiration.
 
 ### UserLogins
 
